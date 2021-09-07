@@ -34,5 +34,5 @@
     * Запуск mc и поиск его PID  
     ![sample text](img/mc-run.PNG)
 
-    * Убийство процесса mc
+    * Убийство процесса mc  
     ![sample text](img/mc-killed.PNG)
