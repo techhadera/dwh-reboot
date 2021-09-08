@@ -35,7 +35,7 @@
         cd ..
       done
       ```
-      Ссылка на скрипт: [subtask_1.sh](src/subtask_1.sh)
+      Ссылка на скрипт: [subtask_1.sh](https://github.com/techhadera/dwh-reboot/blob/master/bash-programming/src/subtask_1.sh)
 
 1. Использовать команду AWK на вывод длинного списка каталога, чтобы отобразить только права доступа к файлам. Затем отправить в конвейере этот вывод на sort и uniq, чтобы отфильтровать все повторяющиеся строки.
 
