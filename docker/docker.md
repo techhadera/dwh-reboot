@@ -33,20 +33,21 @@
 1. Используя Dockerfile, собрать связку nginx + PHP-FPM в одном контейнере.
 
     * Содержание Dockerfile
-    ```    
-    FROM ubuntu:latest
-    MAINTAINER User GB
-    RUN apt update
-    RUN apt upgrade
-    RUN apt install nginx -y
-    RUN apt install php-fpm -y
-    VOLUME "/var/www/html"
-    EXPOSE 80
-    CMD /usr/sbin/nginx -g "daemon off;"
-    ```
+      Ссылка на файл: [Dockerfile](https://github.com/techhadera/dwh-reboot/blob/master/docker/src/Dockerfile)
+      ```    
+      FROM ubuntu:latest
+      MAINTAINER User GB
+      RUN apt update
+      RUN apt upgrade
+      RUN apt install nginx -y
+      RUN apt install php-fpm -y
+      VOLUME "/var/www/html"
+      EXPOSE 80
+      CMD /usr/sbin/nginx -g "daemon off;"
+      ```
     * Сборка Dockerfile  
-      `docker build -t nginx_phpfpm .`
-      Результат сборки:
+    `docker build -t nginx_phpfpm .`
+    Результат сборки:
       ```
       Successfully built cbffd4aeba21
       Successfully tagged nginx_phpfpm:latest
