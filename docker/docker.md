@@ -52,5 +52,24 @@
       Successfully built cbffd4aeba21
       Successfully tagged nginx_phpfpm:latest
       ```
+    * Далее запускаем команду
+      `docker run -d --name server -p 80:80 nginx_phpfpm`
+      И получаем идентификатор контейнера
+      `6918684a3b4d3a88b397661bdea65d05f77ca2afab54d8b307429e291d3b7005`
+      В выводе `docker ps`, можно видеть запущенный контейнер:
+      `6918684a3b4d   nginx_phpfpm   "/bin/sh -c '/usr/sb…"   2 minutes ago   Up 2 minutes   0.0.0.0:80->80/tcp, :::80->80/tcp   server`
 
-    
+    * Проверка наличия php-fpm командой `apt list  --installed | grep 'php'`
+      Вывод:
+      ```
+      php-common/focal,now 2:75 all [installed,automatic]
+      php-fpm/focal,now 2:7.4+75 all [installed]
+      php7.4-cli/focal-updates,focal-security,now 7.4.3-4ubuntu2.5 amd64 [installed,automatic]
+      php7.4-common/focal-updates,focal-security,now 7.4.3-4ubuntu2.5 amd64 [installed,automatic]
+      php7.4-fpm/focal-updates,focal-security,now 7.4.3-4ubuntu2.5 amd64 [installed,automatic]
+      php7.4-json/focal-updates,focal-security,now 7.4.3-4ubuntu2.5 amd64 [installed,automatic]
+      php7.4-opcache/focal-updates,focal-security,now 7.4.3-4ubuntu2.5 amd64 [installed,automatic]
+      php7.4-readline/focal-updates,focal-security,now 7.4.3-4ubuntu2.5 amd64 [installed,automatic]
+      ```
+    * Для проверки работоспособности nginx, зайдем на ip адрес машины через браузер из окружения Windows
+    ![Nginx](img/nginx.PNG)
