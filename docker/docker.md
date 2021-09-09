@@ -5,7 +5,7 @@
     * После выполнения примеров из видео, образ ubuntu уже находится в списке образов docker. Поэтому его можно сразу запустить при помощи команды
     `docker run -t -i --rm ubuntu bash`
     Результат работы команды `ls -li` внутри контейнера
-    ```
+      ```
       total 48
       4947 lrwxrwxrwx   1 root root    7 Aug 27 07:16 bin -> usr/bin
       802481 drwxr-xr-x  2 root root 4096 Apr 15  2020 boot
@@ -28,7 +28,7 @@
       8479 drwxrwxrwt   2 root root 4096 Aug 27 07:27 tmp
       8480 drwxr-xr-x  13 root root 4096 Aug 27 07:16 usr
       8753 drwxr-xr-x  11 root root 4096 Aug 27 07:27 var
-    ```
+      ```
 
 1. Используя Dockerfile, собрать связку nginx + PHP-FPM в одном контейнере.
 
