@@ -2,7 +2,7 @@
 
 1. Запустить контейнер с Ubuntu.
 
-    * После выполнения примеров из видео, образ ubuntu уже находится в списке образов docker. Поэтому его можно сразу запустить при помощи команды
+    * После выполнения примеров из видео, образ ubuntu уже находится в списке образов docker. Поэтому его можно сразу запустить при помощи команды  
     `docker run -t -i --rm ubuntu bash`
     Результат работы команды `ls -li` внутри контейнера
       ```
@@ -32,8 +32,8 @@
 
 1. Используя Dockerfile, собрать связку nginx + PHP-FPM в одном контейнере.
 
-    * Содержание Dockerfile
-      Ссылка на файл: [Dockerfile](https://github.com/techhadera/dwh-reboot/blob/master/docker/src/Dockerfile)
+    * Содержание Dockerfile  
+      Ссылка на файл: [Dockerfile](https://github.com/techhadera/dwh-reboot/blob/master/docker/src/Dockerfile)  
       ```    
       FROM ubuntu:latest
       MAINTAINER User GB
@@ -46,20 +46,21 @@
       CMD /usr/sbin/nginx -g "daemon off;"
       ```
     * Сборка Dockerfile  
-    `docker build -t nginx_phpfpm .`
+    `docker build -t nginx_phpfpm .`  
     Результат сборки:
       ```
       Successfully built cbffd4aeba21
       Successfully tagged nginx_phpfpm:latest
       ```
-    * Далее запускаем команду
-      `docker run -d --name server -p 80:80 nginx_phpfpm`
-      И получаем идентификатор контейнера
-      `6918684a3b4d3a88b397661bdea65d05f77ca2afab54d8b307429e291d3b7005`
-      В выводе `docker ps`, можно видеть запущенный контейнер:
-      `6918684a3b4d   nginx_phpfpm   "/bin/sh -c '/usr/sb…"   2 minutes ago   Up 2 minutes   0.0.0.0:80->80/tcp, :::80->80/tcp   server`
+    * Далее запускаем команду  
+      `docker run -d --name server -p 80:80 nginx_phpfpm`  
+      И получаем идентификатор контейнера  
+      `6918684a3b4d3a88b397661bdea65d05f77ca2afab54d8b307429e291d3b7005`  
+      В выводе `docker ps`, можно видеть запущенный контейнер:  
+      `6918684a3b4d   nginx_phpfpm   "/bin/sh -c '/usr/sb…"   2 minutes ago   Up 2 minutes   0.0.0.0:80->80/tcp, :::80->80/tcp   server`  
 
-    * Проверка наличия php-fpm командой `apt list  --installed | grep 'php'`
+    * Проверка наличия php-fpm командой  
+     `apt list --installed | grep 'php'`  
       Вывод:
       ```
       php-common/focal,now 2:75 all [installed,automatic]
