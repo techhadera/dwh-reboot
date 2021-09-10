@@ -35,9 +35,9 @@
     * Создание группы developer  
     `sudo addgroup developer`
 
-    * Создание пользователей и добавление их в группу developer 
-    `sudo adduser dev_1 --gid 1004` 
-    `sudo usermod -aG developer dev_1`   
+    * Создание пользователей и добавление их в группу developer  
+    `sudo adduser dev_1 --gid 1004`  
+    `sudo usermod -aG developer dev_1`  
     `sudo adduser dev_2 --gid 1004`  
     `sudo usermod -aG developer dev_2`
 
@@ -47,11 +47,12 @@
     `sudo su dev_1`
     `sudo mkdir dev_project`  
     Добавляем права rwx для группы  
-    `sudo chmod -R 771 dev_project`  
+    `sudo chmod -R 771 dev_project`
+
     * Меняем группу каталога и его содержимого  
     `sudo chgrp -R developer dev_project`  
-    Добавляем SGID, для того чтобы все подкатегории и файлы наследовали права папки dev_project
-    `sudo chmod +s dev_project` 
+    Добавляем SGID, для того чтобы все подкатегории и файлы наследовали права папки dev_project  
+    `sudo chmod +s dev_project`  
     Вывод команды `ls -hla`  
     `drwsrws--x  2 root  developer 4.0K Sep 11 01:06 dev_project`  
 
