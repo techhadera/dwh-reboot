@@ -32,7 +32,7 @@
 
 1. Создать группу developer и нескольких пользователей, входящих в неё. Создать директорию для совместной работы. Сделать так, чтобы созданные одними пользователями файлы могли изменять другие пользователи этой группы.
 
-    * Создадим общую папку, установим необходимые права (rwx для группы developer и SGID 2000 для разрешения пользователям запускать исполняемые файлы от имени владельца (или группы) запускаемого файла), группу и пользователей входящих в нее.  
+    * Создадим общую папку, установим необходимые права (rwx для группы developer и SGID для разрешения пользователям запускать исполняемые файлы от имени владельца (или группы) запускаемого файла), группу и пользователей входящих в нее.  
     `user@gb-test:/home$ sudo mkdir dev_project`  
     `user@gb-test:/home$ sudo chmod 2774 dev_project`  
     `user@gb-test:/home$ sudo useradd -s /bin/bash -d /home/dev_1 -m dev_1`  
@@ -62,3 +62,24 @@
     `drwxrwsr-- 2 root  developer 4.0K Sep 11 17:12 .`  
     `drwxr-xr-x 6 root  root      4.0K Sep 11 17:08 ..`  
     `-rw-rw-r-- 1 dev_1 developer   28 Sep 11 17:14 notes.txt`  
+
+1. Создать в директории для совместной работы поддиректорию для обмена файлами, но чтобы удалять файлы могли только их создатели.
+
+    * Создадим поддиректорию `shared_files` для обмена файлами. Установим доступ 1774 (rwx для группы и владельца, а также sticky bit, для того чтобы файлы могли удалять только  их создатели)  
+    `dev_1@gb-test:/home/dev_project$ mkdir shared_files`  
+    `dev_1@gb-test:/home/dev_project$ chmod 1774 shared_files`  
+    
+    * Создадим файл dev1_file пользователем dev_1  
+    `dev_1@gb-test:/home/dev_project/shared_files$ touch dev1_file`  
+
+    * Зайдем через пользователя dev_2, создадим файл dev2_file и поменяем содержание файла dev1_file  
+    `dev_2@gb-test:/home/dev_project/shared_files$ touch dev2_file`  
+    `dev_2@gb-test:/home/dev_project/shared_files$ echo 'changes' >> dev1_file`  
+    `dev_2@gb-test:/home/dev_project/shared_files$ cat dev1_file`  
+    Вывод:  
+    `changes`  
+
+    * Попробуем удалить файл dev1_file юзером dev1_file  
+    `dev_2@gb-test:/home/dev_project/shared_files$ rm dev1_file`  
+    Получаем ошибку  
+    `rm: cannot remove 'dev1_file': Operation not permitted`
