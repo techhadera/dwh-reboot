@@ -2,7 +2,7 @@
 
 1. Создать и вызвать функцию TheNumbers, производящую деление числа на 2
 
-      * [Ссылка на файл](src/sql_5_1.sql)   
+      * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_5_1.sql)   
         ```
         create or replace function TheNumbers(num in number) return number
         is
@@ -15,7 +15,7 @@
 
 1. Создать произвольную таблицу и написать процедуру, удаляющую её
 
-    * [Ссылка на файл](src/sql_5_2.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_5_2.sql)   
       ```
       create table tmp_pancakes_znu
         as (
@@ -37,7 +37,7 @@
 
 1. Создать функцию, которая будет инвертировать введённый текст длинной до 128 символов.
 
-    * [Ссылка на файл](src/sql_5_3.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_5_3.sql)   
       ```
       create or replace function reverse_str(str in varchar2) return varchar2
       is

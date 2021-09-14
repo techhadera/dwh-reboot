@@ -3,7 +3,7 @@
 
 1. Написать цикл, выводящий последовательно квадраты чисел от 1 до 12
 
-    * [Ссылка на файл](src/sql_4_1.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_4_1.sql)   
       ```
       begin
         for i in 1..12 loop
@@ -14,7 +14,7 @@
 
 1. Написать цикл, увеличивающий цену пирожков на 20% до тех пор, пока средняя цена пирожков не будет равна или превышать среднюю цену на блины.
 
-    * [Ссылка на файл](src/sql_4_2.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_4_2.sql)   
       ```
       declare
       avg_pie_price number(5,2);
@@ -50,7 +50,7 @@
 
 1. Дополнить цикл из задачи № 2 условием, по которому выполнение цикла прекратиться в случае, если максимальная цена на пирожок превысит максимальную цену на блин
 
-    * [Ссылка на файл](src/sql_4_3.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_4_3.sql)   
       ```
       declare
         avg_pie_price number(5,2);

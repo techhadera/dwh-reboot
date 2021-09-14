@@ -2,7 +2,7 @@
 
 1. Используя CASE вывести своё мнение о цене на блинчики с малиной
 
-    * [Ссылка на файл](src/sql_3_1.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_3_1.sql)   
     ```
     select
       product_name,
@@ -21,7 +21,7 @@
 
 1. Вывести данные о пирожках, подменив цену на пирожки с определённой начинкой, соответствующей ценой на блины с той же начинкой. Это задание можно сделать проще, чем кажется на первый взгляд.
 
-    * [Ссылка на файл](src/sql_3_2.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_3_2.sql)   
     ```
     select
       pi.product_name,
@@ -38,7 +38,7 @@
 
 1. Увеличить цену пирожков на 33%, уменьшить цену блинов на 33%. Можно выполнить только одну команду update
 
-    * [Ссылка на файл](src/sql_3_3.sql)   
+    * [Ссылка на файл](https://github.com/techhadera/dwh-reboot/tree/master/sql-advanced/src/sql_3_3.sql)   
     ```
     update pies_znu set price=
       case
