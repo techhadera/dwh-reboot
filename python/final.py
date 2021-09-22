@@ -11,6 +11,7 @@ class SearchTest(unittest.TestCase):
     self.options.add_experimental_option('prefs', {'intl.accept_languages': 'en,en_US'})
     self.driver = webdriver.Chrome(options=self.options)
     self.driver.get('http://google.com/ncr')
+    time.sleep(1)
   
   def test_search(self):
     # Проверка того, что первая ссылка ведет на https://selenide.org/
