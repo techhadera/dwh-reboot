@@ -36,7 +36,7 @@ class SearchTest(unittest.TestCase):
     time.sleep(1)
     first_entry = self.driver.find_element_by_xpath('//*[@id="rso"]/div[1]/div/div/div/div/div/div[1]/a')
     url = first_entry.get_attribute('href')
-    assert 'selenide' in image_alt.lower()
+    assert url == 'https://selenide.org/'
 
   def tearDown(self) -> None:
     self.driver.close()
