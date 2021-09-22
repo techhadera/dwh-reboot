@@ -20,7 +20,7 @@ class SearchTest(unittest.TestCase):
     time.sleep(1)
     first_entry = self.driver.find_element_by_xpath('//*[@id="rso"]/div[1]/div/div/div/div/div/div[1]/a')
     url = first_entry.get_attribute('href')
-    assert url == 'https://selenide.org/' 'trully'
+    assert url == 'https://selenide.org/'
 
     # Проверка того, что первая картинка связана с selenide
     images_button = self.driver.find_element_by_xpath('//*[@id="hdtb-msb"]/div[1]/div/div[2]/a')
