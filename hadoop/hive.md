@@ -38,12 +38,12 @@
     * Создание таблицы state_names  
       ```
       create table znu_names.state_names (
-        Id int,
+        Id string,
         Name string,
-        Year_ int,
+        Year_ string,
         Gender string,
         State string,
-        Count_ int
+        Count_ string
       )
       ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
       STORED AS TEXTFILE
