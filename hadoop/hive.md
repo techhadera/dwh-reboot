@@ -62,7 +62,7 @@
 1. Сделать любой отчет по загруженным данным используя групповые и агрегатные функции.
 
     * Выполним подсчет количества женских и мужских имен в таблице state_names  
-    [Ссылка на файл](src/1.sql)  
+    [Ссылка на файл](https://github.com/techhadera/dwh-reboot/blob/master/hadoop/src/1.sql)  
       ```
       select count(*) total_count, gender
       from znu_names.state_names
@@ -79,7 +79,7 @@
 1. Сделать любой отчет по загруженным данным используя JOIN.
 
     * Выполним join двух таблиц state_names и national_names по составному ключу `(name, year_)`. Выведем информацию об именах и количестве имен новорожденных по годам. Сортируем выборку по году, и выводим последние 10 записей.  
-    [Ссылка на файл](src/2.sql)  
+    [Ссылка на файл](https://github.com/techhadera/dwh-reboot/blob/master/hadoop/src/2.sql)  
       ```
       select nn.name, nn.year_, sn.count_
       from znu_names.national_names nn
