@@ -51,7 +51,7 @@
       tblproperties ("skip.header.line.count"="1")
       ```
 
-    * В том случае, если данные из csv не подгрузились, необходимо загрузить их через hive  
+    * В том случае, если данные из csv не подгрузились, необходимо загрузить их через hive. (Позже обнаружил по какой причине файлы не подтягивались. Путь должен был ничаться с /user/*)  
       ```
       LOAD DATA LOCAL INPATH '/home/nzakharov/state_names.csv' OVERWRITE INTO TABLE znu_names.state_names;
       ```
