@@ -69,7 +69,7 @@
       group by gender;
       ```
       Результат:
-      [Ссылка на html отчет](urls/count.html)  
+      [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/count.html)  
       ```
       total_count     gender
       3154009         F
@@ -90,7 +90,7 @@
       limit 10;
       ```
       Результат:  
-      [Ссылка на html отчет](urls/join.html)  
+      [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/join.html)  
       ```
       nn.name nn.year_        sn.count_
       Aadi    2014            10
