@@ -68,17 +68,18 @@
       from znu_names.state_names
       group by gender;
       ```
-      Вывод(на момент выполнения практики, к hive было невозможно подключиться через DBeaver для формирования отчета в формате .html. Если доступ появится, отчет будет обновлен):  
+      Результат:
+      [Ссылка на html отчет](urls/count.html)  
       ```
       total_count     gender
-      1081683         F
-      743750          M
+      3154009         F
+      2493417         M
       Time taken: 5.08 seconds, Fetched: 2 row(s)
       ```
 
 1. Сделать любой отчет по загруженным данным используя JOIN.
 
-    * Выполним join двух таблиц state_names и national_names по составному ключу `(name, year_)`. Выведем информацию об именах и количестве имен новорожденных по годам. Сортируем выборку по году, и выводим последние 10 записей.  
+    * Выполним join двух таблиц state_names и national_names по атрибутам `(name, year_)`. Выведем информацию об именах и количестве имен новорожденных по годам. Сортируем выборку по году, и выводим последние 10 записей.  
     [Ссылка на файл](https://github.com/techhadera/dwh-reboot/blob/master/hadoop/src/2.sql)  
       ```
       select nn.name, nn.year_, sn.count_
@@ -88,18 +89,19 @@
       order by nn.year_ desc
       limit 10;
       ```
-    * Вывод(на момент выполнения практики, к hive было невозможно подключиться через DBeaver для формирования отчета в формате .html. Если доступ появится, отчет будет обновлен):
+      Результат:  
+      [Ссылка на html отчет](urls/join.html)  
       ```
       nn.name nn.year_        sn.count_
-      Aaditya 2014            7
-      Zuri    2014            28
-      Aadya   2014            5
-      Aadya   2014            5
-      Aadya   2014            6
-      Aadya   2014            11
-      Aadya   2014            16
-      Zuri    2014            7
-      Aadya   2014            23
-      Aadya   2014            7
-      Time taken: 22.077 seconds, Fetched: 10 row(s)
+      Aadi    2014            10
+      Zyan    2014            5
+      Aahil   2014            18
+      Aadi    2014            5
+      Aadi    2014            9
+      Aaliah  2014            6
+      Aaliah  2014            6
+      Zyan    2014            6
+      Aahil   2014            6
+      Aahil   2014            10
+      Time taken: 24.955 seconds, Fetched: 10 row(s)
       ```
