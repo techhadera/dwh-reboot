@@ -176,6 +176,7 @@
       limit 10;
       ```
       Результат:
+      [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/parq.html)  
       ```
       name    total_count
       James   4957166.0
@@ -200,6 +201,7 @@
       limit 10;
       ```
       Результат:
+      [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/avro.html) 
       ```
       name    total_count
       James   4957166.0
