@@ -192,7 +192,7 @@
       Time taken: 792.325 seconds, Fetched: 10 row(s)
       ```
 
-      * Подсчитаем количество новорожденных с именами за все года и минимальное количество детей с данным именем за все время в таблице в формате parquet с компрессией (агрегат по двум колонкам)  
+    * Подсчитаем количество новорожденных с именами за все года и минимальное количество детей с данным именем за все время в таблице в формате parquet с компрессией (агрегат по двум колонкам)  
       ```
       select name, sum(count_) total_count, min(count_) min_count
       from znu_names_parq.parq_state_names_comp
@@ -203,16 +203,16 @@
       [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/parq_2.html)  
       ```
       name    total_count min_count
-      Aaban	  12.0	      6
-      Aadan	  23.0	      5
-      Aadarsh	5.0	        5
-      Aaden	  3426.0	    10
-      Aadhav	6.0	        6
-      Aadhya	453.0	      11
-      Aadi	  313.0	      10
-      Aadil	  5.0	        5
-      Aadin	  5.0	        5
-      Aadit	  18.0	      5
+      Aaban   12.0        6
+      Aadan   23.0        5
+      Aadarsh 5.0         5
+      Aaden   3426.0      10
+      Aadhav  6.0         6
+      Aadhya  453.0       11
+      Aadi    313.0       10
+      Aadil   5.0         5
+      Aadin   5.0         5
+      Aadit   18.0        5
       ```
     * Подсчитаем количество новорожденных с именами за все года в таблице в формате avro с компрессией (агрегат по одной колонке)  
       ```
@@ -249,16 +249,16 @@
       [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/avro_2.html)  
       ```
       name    total_count min_count
-      Aaban	  12.0	      6
-      Aadan	  23.0	      5
-      Aadarsh	5.0	        5
-      Aaden	  3426.0	    10
-      Aadhav	6.0	        6
-      Aadhya	453.0	      11
-      Aadi	  313.0	      10
-      Aadil	  5.0	        5
-      Aadin	  5.0	        5
-      Aadit	  18.0	      5
+      Aaban   12.0        6
+      Aadan   23.0        5
+      Aadarsh 5.0         5
+      Aaden   3426.0      10
+      Aadhav  6.0         6
+      Aadhya  453.0       11
+      Aadi    313.0       10
+      Aadil   5.0         5
+      Aadin   5.0         5
+      Aadit   18.0        5
       ```
 1. Сделать выводы о эффективности хранения и компрессии.
 
