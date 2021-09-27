@@ -173,7 +173,7 @@
       order by sum(count_) desc
       limit 10;
       ```
-      Результат:
+      Результат:  
       [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/parq.html)  
       ```
       name    total_count
@@ -221,7 +221,7 @@
       order by sum(count_) desc
       limit 10;
       ```
-      Результат:
+      Результат:  
       [Ссылка на html отчет](https://techhadera.github.io/dwh-reboot/hadoop/urls/avro.html) 
       ```
       name    total_count
