@@ -14,15 +14,14 @@
 
     * Создание базы данных  
       ```
-      create database znu_names
-      location "/nzakharov/hive";
+      create database znu_on_delete;
       ```
 
 1. Создать таблицы внутри базы данных с использованием всех загруженных файлов. Один файл – одна таблица.
 
     * Создание таблицы national_names  
       ```
-      create table znu_names.national_names (
+      create external table znu_on_delete.national_names (
         Id string,
         Name string,
         Year_ string,
@@ -31,13 +30,13 @@
       )
       ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
       STORED AS TEXTFILE
-      location "/nzakharov/hive/national_names"
+      location "/apps/hive/warehouse/znu_on_delete.db/national_names"
       tblproperties ("skip.header.line.count"="1");
       ```
 
     * Создание таблицы state_names  
       ```
-      create table znu_names.state_names (
+      create external table znu_on_delete.state_names (
         Id string,
         Name string,
         Year_ string,
@@ -47,16 +46,8 @@
       )
       ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
       STORED AS TEXTFILE
-      location "nzakharov/hive/state_names"
+      location "/apps/hive/warehouse/znu_on_delete.db/state_names"
       tblproperties ("skip.header.line.count"="1")
-      ```
-
-    * В том случае, если данные из csv не подгрузились, необходимо загрузить их через hive. (Позже обнаружил по какой причине файлы не подтягивались. Путь должен был ничаться с /user/*)  
-      ```
-      LOAD DATA LOCAL INPATH '/home/nzakharov/state_names.csv' OVERWRITE INTO TABLE znu_names.state_names;
-      ```
-      ```
-      LOAD DATA LOCAL INPATH '/home/nzakharov/national_names.csv' OVERWRITE INTO TABLE znu_names.movies;
       ```
 
 1. Сделать любой отчет по загруженным данным используя групповые и агрегатные функции.
@@ -65,7 +56,7 @@
     [Ссылка на файл](https://github.com/techhadera/dwh-reboot/blob/master/hadoop/src/1.sql)  
       ```
       select count(*) total_count, gender
-      from znu_names.state_names
+      from znu_on_delete.state_names
       group by gender;
       ```
       Результат:
@@ -74,7 +65,7 @@
       total_count     gender
       3154009         F
       2493417         M
-      Time taken: 5.08 seconds, Fetched: 2 row(s)
+      Time taken: 9.981 seconds, Fetched: 2 row(s)
       ```
 
 1. Сделать любой отчет по загруженным данным используя JOIN.
@@ -83,8 +74,8 @@
     [Ссылка на файл](https://github.com/techhadera/dwh-reboot/blob/master/hadoop/src/2.sql)  
       ```
       select nn.name, nn.year_, sn.count_
-      from znu_names.national_names nn
-      join znu_names.state_names sn
+      from znu_on_delete.national_names nn
+      join znu_on_delete.state_names sn
       on (sn.name = nn.name and sn.year_ = nn.year_)
       order by nn.year_ desc
       limit 10;

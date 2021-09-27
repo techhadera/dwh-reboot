@@ -1,3 +1,3 @@
 select count(*) total_count, gender
-from znu_names.state_names
+from znu_on_delete.state_names
 group by gender;
