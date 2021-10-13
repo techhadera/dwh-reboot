@@ -59,7 +59,7 @@
     * Таким образом, финальный пайплайн будет выглядить следующим образом:  
     `first_task >> [create_titanic_dataset, mean_fares_titanic_dataset] >> pivot_titanic_dataset >> last_task`  
 
-    * Исходный код DAG'a [DAG](https://github.com/techhadera/dwh-reboot/airflow/dags/dag_1.py)  
+    * [Ссылка на ссходный код DAG'a](https://github.com/techhadera/dwh-reboot/blob/master/airflow/dags/dag_1.py)  
 
     * Скриншот графа  
     ![sample text](img/hw_1/graph.PNG)  
@@ -68,4 +68,4 @@
     ![sample text](img/hw_1/head.PNG)  
 
     * Cодержание лога инстанса таски last_task в UI  
-    [log](https://github.com/techhadera/dwh-reboot/airflow/logs/hw_1/last_task.log)
+    [Ссылка на лог last_task](https://github.com/techhadera/dwh-reboot/blob/master/airflow/logs/hw_1/last_task.log)
