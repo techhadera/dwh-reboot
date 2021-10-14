@@ -31,7 +31,8 @@ def pivot_dataset():
     df = titanic_df.pivot_table(index=['Sex'],
                                 columns=['Pclass'],
                                 values='Name',
-                                aggfunc='count').reset_index()
+                                aggfunc='count') \
+                    .reset_index()
     df.to_csv(get_path('titanic_pivot.csv'))
 
     
@@ -77,8 +78,8 @@ with DAG(
     
     last_task = BashOperator(
         task_id='last_task',
-        bash_command='echo "Pipeline finished! Execution date is {{ execution_date | ds }}"',
+        bash_command='echo "Pipeline finished! Execution date is {{ ds }}"',
         dag=dag,
     )
     
-    first_task >> [create_titanic_dataset, mean_fares_titanic_dataset] >> pivot_titanic_dataset >> last_task
+    first_task >> create_titanic_dataset >>  [pivot_titanic_dataset, mean_fares_titanic_dataset] >> last_task
