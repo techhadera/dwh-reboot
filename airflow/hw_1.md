@@ -51,13 +51,13 @@
     ```
     last_task = BashOperator(
         task_id='last_task',
-        bash_command='echo "Pipeline finished! Execution date is {{ execution_date | ds }}"',
+        bash_command='echo "Pipeline finished! Execution date is {{ ds }}"',
         dag=dag,
     )
     ```
 
     * Таким образом, финальный пайплайн будет выглядить следующим образом:  
-    `first_task >> [create_titanic_dataset, mean_fares_titanic_dataset] >> pivot_titanic_dataset >> last_task`  
+    `first_task >> create_titanic_dataset >>  [pivot_titanic_dataset, mean_fares_titanic_dataset] >> last_task`  
 
     * [Ссылка на исходный код DAG'a](https://github.com/techhadera/dwh-reboot/blob/master/airflow/dags/dag_1.py)  
 
