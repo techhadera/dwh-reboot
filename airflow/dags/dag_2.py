@@ -5,7 +5,7 @@ from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
-from modules.utils import get_titanic_dataset, pivot_dataset, mean_fare_per_class, dump_to_db
+from utils_2 import get_titanic_dataset, pivot_dataset, mean_fare_per_class, dump_to_db
 
 
 path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
